@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Login from './components/Login';
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [loggedState, setLoggedState] = useState(true); //to be changed
+
+  function setState(state){
+    setLoggedState(state);
+  }
+
+  if(loggedState){
+    return(
+      <Navigation getState={setState}/>
+    )
+  }else{
+    return (
+		  <div className="container">
+			  <Header />
+			  <Login getState={setState}/>
+			  <Footer />
+		  </div>
+	  );
+  }
+  
 }
 
 export default App;

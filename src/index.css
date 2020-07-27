@@ -1,3 +1,11 @@
+@font-face {font-family: "Neutra Text"; 
+  src: url("//db.onlinewebfonts.com/t/4d4c293abd685f6ad59ec0f2c8e9de61.eot"); 
+  src: url("//db.onlinewebfonts.com/t/4d4c293abd685f6ad59ec0f2c8e9de61.eot?#iefix") format("embedded-opentype"), 
+       url("//db.onlinewebfonts.com/t/4d4c293abd685f6ad59ec0f2c8e9de61.woff2") format("woff2"), 
+       url("//db.onlinewebfonts.com/t/4d4c293abd685f6ad59ec0f2c8e9de61.woff") format("woff"), 
+       url("//db.onlinewebfonts.com/t/4d4c293abd685f6ad59ec0f2c8e9de61.ttf") format("truetype"), 
+       url("//db.onlinewebfonts.com/t/4d4c293abd685f6ad59ec0f2c8e9de61.svg#Neutra Text TT Demi") format("svg"); }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +18,818 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header {
+  margin: 0 auto;
+  color: #2da822;
+}
+
+.container {
+  margin: 0 auto;
+  padding-top: 30px;
+  text-align: center;
+  width: 326px;
+  height: 100%;
+}
+
+.logo {
+  width: 326px;
+  height: 47px;
+}
+
+.logo-cup {
+  width: 300px;
+  height: 260px;
+}
+
+.slogan {
+  font-family: "Neutra Text";
+  margin-top: 40px;
+  margin-bottom: 24px;
+  font-size: 25px;
+}
+
+.textbox {
+
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+
+  padding: 15px 16px;
+
+  width: 326px;
+  height: 48px;
+
+  background: #FFFFFF;
+  /* Light Gray */
+
+  border: 1px solid #979797;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin: 8px auto;
+}
+
+.button-disabled {
+  padding: 15px 126px;
+  margin-top: 16px;
+  width: 326px;
+  height: 48px;
+
+  /* Light Gray */
+  background: #979797;
+  border-radius: 36px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.button-enabled {
+  padding: 15px 126px;
+  margin-top: 16px;
+  width: 326px;
+  height: 48px;
+
+  background:#2da822;
+  box-shadow: 0px 8px 24px rgba(236, 104, 74, 0.16);
+  border-radius: 36px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.footer {
+
+  /* Body-16 */
+  font-family: 'Quicksand', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+
+  display: inline-block;
+
+  /* Gray */
+  color: #5B6F80;
+  margin-top: 150px;
+  margin-bottom: 0;
+  
+}
+
+.error {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #2da822;
+  text-align: left;
+}
+
+.email-err {
+  margin: 0 auto 8px auto;
+}
+
+.pass-err {
+  margin: 0 auto 5px auto;
+}
+
+.nav-container {
+  position: absolute;
+  width: 240px;
+  height: 834px;
+  left: 0px;
+  top: 0px;
+
+  /* White */
+
+  background: #FFFFFF;
+  box-shadow: inset -1px 0px 0px #F0F0F0;
+}
+
+.orders-logo {
+  margin: 40px 68px 0px;
+  left: 68px;
+  top: 40px;
+  width: 103px;
+  height: 90px;
+}
+
+.orders2-logo {
+  width: 103px;
+  height: 15px;
+  margin-bottom: 40px;
+  margin-left: 67px;
+}
+
+/*dimensions for pages*/
+.pages {
+  position: absolute;
+  width: 954px;
+  height: 834px;
+  left: 240px;
+  top: 0px;
+  text-align: center;
+  background-image: url('/bg-image.jpg');
+}
+
+.orders-page p{
+  padding-top: 30px;
+}
+
+/*size of link container*/
+.nav-item {
+  width: 239px;
+  height: 64px;
+  background: #FFFFFF;
+  
+}
+
+/*remove line for link*/
+.nav-link {
+  text-decoration: none;
+}
+
+/*style for menu*/
+.nav-link div p{
+
+  display: inline;
+  position: relative;
+  top: 15px;
+  color: #979797;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/*Put shadow when link is focused*/
+.active-link div {
+  background: #FFFFFF;
+  border-top: 2px solid#2da822;
+  border-bottom: 2px solid#2da822;
+}
+
+/*Change color test when focused*/
+.active-link div p{
+  color: #2da822;
+}
+
+.active-link div .icon{
+  color: #2da822;
+}
+
+/*Styles for both active and inactive icons*/
+.icon{
+  position: relative;
+  top: 18px;
+  padding-right: 24px;
+  padding-left: 30px;
+  color: #979797;
+}
+
+.logout {
+  position: relative;
+  top: 406px;
+  width: 240px;
+  height: 40px;
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
+  border: 1px solid white;
+  color: #979797;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: #2da822;
+  color: white;
+}
+
+.inner-page {
+  width: 800px;
+  height: 650px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 80px;
+  opacity: 0.9;
+  font-family: 'Raleway', sans-serif;
+  font-weight: lighter;
+  font-size: larger;
+}
+
+/*Tables*/
+.table{
+  position: absolute;
+  color: white;
+  background:rgba(34,168,34,1);
+  width: 189px;
+  height: 118px;
+  border-radius: 10px;
+  opacity: 0.75;
+}
+
+.Table{
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.table-1{
+  left: 369px;
+  top: 559px;
+}
+
+.table-2{
+  top: 559px;
+  left: 617px;
+}
+
+.table-3{
+  top: 419px;
+  left: 369px;
+}
+
+.table-4{
+  top: 419px;
+  left: 617px;
+}
+
+.table-5{
+  width: 160px;
+  height: 406px;
+  top: 270px;
+  left: 150px;
+}
+
+.table-6{
+  border-radius: 100px;
+  top: 270px;
+  left: 404px;
+  width: 118px;
+}
+
+.table-7{
+  border-radius: 100px;
+  top: 270px;
+  left: 653px;
+  width: 118px;
+}
+
+.takeout {
+  top: 153px;
+  left: 617px;
+  height: 50px;
+}
+
+.takeout p {
+  position: relative;               
+  top: 3px;                 
+  font-size: small;
+}
+
+.table-1 p, .table-2 p, .table-3 p, .table-4 p, .table-6 p, .table-7 p{
+  position: relative;               
+  top: 40px;                 
+  font-size: small;
+}
+
+.table-5 p {
+  position: relative;               
+  top: 160px;     
+  font-size: small;                
+}
+
+.order-page {
+  width: 800px;
+  height: 650px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 80px;
+  opacity: 0.9;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  font-size: x-large;
+  z-index: 1;
+}
+
+.order-page p {
+  display: inline-block;
+  margin-top: 67px;
+
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 45px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #1E9F1B;
+}
+
+.close-button{
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #2da822;
+  color: #2da822;
+  position: absolute;
+  right: 48px;
+  top: 31px;
+}
+
+.close-button:hover {
+  background-color: #2da822;
+  color: white;
+}
+
+hr {
+  position: absolute;
+  width: 657px;
+  height: 0px;
+  left: 147px;
+  top: 233px;
+}
+
+.inner-page p {
+
+  display: inline-block;
+  margin-top: 67px;
+
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 45px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #1E9F1B;
+}
+
+.add-button {
+  position: absolute;
+  width: 224px;
+  height: 48px;
+  left: 32px;
+  bottom: 107px;
+
+  background: #1E9F1B;
+  border-radius: 10px;
+  font-family: 'Quicksand', sans-serif;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.add-button:hover {
+  background-color: white;
+  color: #2da822;
+  border: 1px solid #2da822;
+}
+
+/*Table styling*/
+.Table
+{
+    position: absolute;
+    left: 34px;
+    top: 200px;
+    width: 737px;
+    height: 265px;
+    border: 1px solid #2da822;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: rgba(151, 188, 150, 0.17);
+}
+.Heading
+{
+    position: absolute;
+    left: 34px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Heading p{
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+  margin-top: 11px;
+  margin-bottom: 0px;
+}
+
+.Heading .Cell1, .Heading .Cell2, .Heading .Cell3{
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #1E9F1B;
+  box-sizing: border-box;
+}
+
+.Heading .Cell1 {
+  border-top-left-radius: 10px;
+  border-right: none;
+  width: 482px;
+  border-bottom: none;
+}
+
+.Heading .Cell2 {
+  width: 90px;
+  border-bottom: none;
+}
+
+.Heading .Cell3 {
+  border-top-right-radius: 10px;
+  border-left: none;
+  width: 167px;
+  border-bottom: none;
+}
+
+.Row
+{
+    display: table-row;
+}
+.Cell1
+{
+  display: table-cell;
+  height: 53px;
+  width: 483px;
+
+  border: 1px solid #1E9F1B;
+  box-sizing: border-box;
+  border-right: 1px solid #2da822;
+  border-bottom: 1px solid #2da822;
+  border-left: none;
+  border-top: none;
+}
+.Cell2 {
+  display: table-cell;
+  width: 90px;
+  height: 53px;
+  border-right: 1px solid #2da822;
+  border-bottom: 1px solid #2da822;
+  border-left: none;
+  border-top: none;
+  box-sizing: border-box;
+}
+
+.Cell3 {
+  display: table-cell;
+  width: 164px;
+  height: 53px;
+  border-bottom: 1px solid #1E9F1B;
+  box-sizing: border-box;
+}
+
+.total {
+  position: absolute;
+  width: 255px;
+  height: 54px;
+  left: 514px;
+  bottom: 107px;
+
+  background: rgba(151, 188, 150, 0.17);
+  border: 1px solid #1E9F1B;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.cell p {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #000000;
+  margin-top: 11px;
+  margin-bottom: 0px;
+}
+
+.wordTotal {
+  position: absolute;
+  width: 94px;
+  height: 45px;
+  left: 382px;
+  bottom: 111px;
+
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 45px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+  color: #1E9F1B;
+}
+
+.total p{
+
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 30px;
+  /* identical to box height */
+  text-align: center;
+
+  color: #000000;
+  margin-top: 11px;
+}
+
+.pay-button {
+  position: absolute;
+  width: 224px;
+  height: 48px;
+  right: 48px;
+  bottom: 40px;
+
+  background: #1E9F1B;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.pay-button:hover{
+  background-color: white;
+  color: #2da822;
+  border: 1px solid #2da822;
+}
+
+.go-orders {
+  position: absolute;
+  width: 224px;
+  height: 48px;
+  right: 34px;
+  top: 65px;
+
+  background: #1E9F1B;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.go-orders:hover{
+  background-color: white;
+  color: #2da822;
+  border: 1px solid #2da822;
+}
+
+.select {
+  position: absolute;
+  width: 133px;
+  height: 40px;
+
+  background: rgba(198, 198, 198, 0.6);
+
+  /* identical to box height */
+
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #2da822;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.active-selection{
+  background: rgba(255, 255, 255, 0.75);
+  border-bottom: none;
+}
+
+.select p{
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 10px;
+  color: #000000;
+
+}
+
+.selection-coffee {
+  left: 34px;
+  top: 150px;
+}
+
+.selection-food {
+  left: 169px;
+  top: 150px;
+}
+
+.products {
+  position: absolute;
+  width: 737px;
+  height: 425px;
+  left: 34px;
+  top: 192px;
+
+  background: #FFFFFF;
+  border: 1px solid #2da822;
+  border-top: none;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.top-border{
+  position: absolute;
+  top: 191px;
+  left: 303px;
+  height: 1px;
+  width: 470px;
+  border-top: 1px solid #2da822;
+  z-index: 1;
+}
+
+.product-cont{
+  width: 735px;
+  height: 116px;
+  margin-top: 12px;
+  background: rgba(225, 227, 225, 0.17);
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.product-cont .product-name {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #000000;
+  margin-top: 38px;
+  margin-bottom: 0px;
+  position: absolute;
+  left: 169px;
+}
+
+.product-cont .product-price {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #000000;
+  position: absolute;
+  left: 169px;
+  margin-top: 62px;
+}
+
+.product-cont .product-photo{
+  position: absolute;
+  width: 155px;
+  height: 116px;
+  left: 1px;
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.product-cont .add{
+  position: relative;
+  width: 24px;
+  height: 24px;
+  left: 320px;
+  top: 38px;
+
+  background: rgba(30, 159, 27, 0.6);
+  border: 1px solid #2da822;
+  cursor: pointer;
+  color:white;
+}
+
+.product-cont .deduct{
+  position: relative;
+  width: 24px;
+  height: 24px;
+  left: 258px;
+  top: 38px;
+
+  background: rgba(30, 159, 27, 0.6);
+  border: 1px solid #2da822;
+  cursor: pointer;
+  color:white;
+}
+
+.product-cont .units{
+  position: relative;
+  width: 67px;
+  height: 24px;
+  top: 40px;
+  left: 290px;
+
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #000000;
+  display: inline;
+}
+
+.add:hover, .deduct:hover{
+  background-color: white;
+  color: #2da822;
+  border: 1px solid #2da822;
+}
+.product-cont .deduct-disabled{
+  background: #979797;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  left: 258px;
+  top: 38px;
+  border: 1px solid #2da822;
+  cursor: pointer;
 }
