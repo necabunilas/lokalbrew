@@ -4,5 +4,7 @@ import ProductItems from './ProductItem';
 
 export default function Coffee(props) {
 
-	return coffee.map((item, index) => <ProductItems orders={props.orders} updateOrders={props.updateOrders} item={item} index={index} />);
+	return coffee.map((item, index) => (
+		<ProductItems orders={props.orders} item={item} index={index} table={props.table} />
+	));
 }

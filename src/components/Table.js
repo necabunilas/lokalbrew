@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StartCase } from 'react-lodash';
 import { Animated } from 'react-animated-css';
 import List from './List';
 import Products from './Products';
+import socketIOClient from 'socket.io-client';
+const ENDPOINT = 'http://localhost:5000';
 
 export default function Table(props) {
 
@@ -39,24 +41,18 @@ export default function Table(props) {
 		setTable(false);
     }
 
-    function updateOrders(item){
-        console.log("update orders");
-        const { order, qty, price } = item;
-        const elementsIndex = orders.findIndex((orderItem) => orderItem.order === order);
-        let newArray = [...orders];
-        setOrders((prev) => {
-            if(prev.some((prevItem,index) => prevItem.order === order)){
-                if(qty > 0){
-                    newArray[elementsIndex] = { ...newArray[elementsIndex], qty: qty };
-					return newArray;
-                }else{
-                    return newArray.splice(elementsIndex, 1);
-                }
-            }else{
-                return [...prev, { order, qty, price }];
-            }   
-        });
-    }
+    useEffect(() => {
+
+        const socket = socketIOClient(ENDPOINT);
+        socket.emit('get Orders', props.name);
+		socket.on('get Orders', (data) => {
+			setOrders(data);
+		});
+
+		// CLEAN UP THE EFFECT
+		return () => socket.disconnect();
+		//
+	}, []);
 
     if(ordersTable){
         return (
@@ -80,7 +76,7 @@ export default function Table(props) {
 				</Animated>
 				{showProducts === false ? null : (
 					<Animated className="order-page" animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
-						<Products closeWindow={closeWindow} updateOrders={updateOrders} orders={orders}/>
+                        <Products closeWindow={closeWindow} orders={orders} table={props.name}/>
 					</Animated>
 				)}
 			</div>

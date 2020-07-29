@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import socketIOClient from 'socket.io-client';
+const ENDPOINT = 'http://localhost:5000';
 
 export default function ProductItem(props) {
 
     const elementsIndex = props.orders.findIndex((orderItem) => orderItem.order === props.item.name);
-    
 	const [units, setUnits] = useState(elementsIndex !== -1 ? props.orders[elementsIndex].qty : 0);
 
 	function isZero() {
@@ -14,27 +15,54 @@ export default function ProductItem(props) {
 		}
 	}
 
+	function sendData(action, item){
+		const socket = socketIOClient.connect(ENDPOINT);
+		socket.emit(action, item);
+	}
+
 	function deduct(event) {
-		let newVal = units - 1;
+		let newVal = parseInt(units) - parseInt(1);
 		event.preventDefault();
         setUnits(newVal);
-        props.updateOrders({
+        updateOrders({
+			table: props.table + '',
 			order: props.item.name,
 			qty: newVal,
-			price: props.item.price
+			price: props.item.price,
 		});
 	}
 
 	function add(event) {
-		let newVal = units + 1;
+		let newVal = parseInt(units) + parseInt(1);
 		event.preventDefault();
 		setUnits(newVal);
-        props.updateOrders({
+        updateOrders({
+			table: props.table + '',
 			order: props.item.name,
 			qty: newVal,
-			price: props.item.price
+			price: props.item.price,
 		});
     }
+
+	function updateOrders(item) {
+		const { order, qty } = item;
+		const elementsIndex = props.orders.findIndex((orderItem) => orderItem.order === order);
+		let newArray = props.orders;
+		let action = '';
+		if (newArray.some((item) => item.order === order)) {
+			if (qty > 0) {
+				newArray[elementsIndex] = { ...newArray[elementsIndex], qty: qty };
+				action = 'update';
+			} else {
+				newArray.splice(elementsIndex,1);
+				action = 'delete';
+			}
+		} else {
+			newArray.push(item);
+			action = 'new';
+		}
+		sendData(action, item);
+	}
 
 	return (
 		<div key={props.index} className="product-cont">

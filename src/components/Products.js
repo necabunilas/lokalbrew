@@ -31,7 +31,7 @@ export default function Products(props) {
 					<div className="top-border" />
 					<div className="products">
 						<Route path="/coffee">
-							<Coffee updateOrders={props.updateOrders} orders={props.orders}/>
+							<Coffee orders={props.orders} table={props.table} />
 						</Route>
 						<Route path="/food">
 							<Food />
