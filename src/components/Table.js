@@ -64,7 +64,7 @@ export default function Table(props) {
 					<button className="close-button" onClick={exitPage}>
 						x
 					</button>
-					<List heading1="Orders" heading2="Qty" heading3="Price" orders={orders} />
+					<List class="Table" heading1="Orders" heading2="Qty" heading3="Price" orders={orders} />
 					<button className="add-button" onClick={showProductsTable}>
 						Edit Items
 					</button>
