@@ -634,6 +634,24 @@ hr {
   line-height: 30px;
 }
 
+.pay-button-disabled{
+  background: #979797;
+  color:white;
+  border: none;
+  position: absolute;
+  width: 224px;
+  height: 48px;
+  right: 48px;
+  bottom: 40px;
+
+  border-radius: 10px;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+}
+
 .pay-button:hover{
   background-color: white;
   color: #2da822;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { StartCase } from 'react-lodash';
 import { Animated } from 'react-animated-css';
 import List from './List';
@@ -19,7 +19,7 @@ export default function Table(props) {
 
     function getTotal(){
         let total = 0;
-        orders.map((item) => {
+        orders.forEach((item) => {
             total += item.qty * item.price;
         })
         return total;
@@ -42,9 +42,8 @@ export default function Table(props) {
     }
 
     useEffect(() => {
-
-        const socket = socketIOClient(ENDPOINT);
-        socket.emit('get Orders', props.name);
+		const socket = socketIOClient(ENDPOINT);
+		socket.emit('get Orders', props.name);
 		socket.on('get Orders', (data) => {
 			setOrders(data);
 		});
@@ -52,7 +51,21 @@ export default function Table(props) {
 		// CLEAN UP THE EFFECT
 		return () => socket.disconnect();
 		//
-	}, []);
+	}, [props.name]);
+
+    function isAllServed(){    
+        let served = true;
+		orders.forEach((item) => {
+			if(item.status === 'new'){
+                served = false;
+            }
+        });
+		return served;
+    }
+
+    function payOrders(event){
+        event.preventDefault();
+    }
 
     if(ordersTable){
         return (
@@ -64,7 +77,14 @@ export default function Table(props) {
 					<button className="close-button" onClick={exitPage}>
 						x
 					</button>
-					<List class="Table" heading1="Orders" heading2="Qty" heading3="Price" orders={orders} />
+					<List
+						class="Table"
+						isAllServed={isAllServed}
+						heading1="Orders"
+						heading2="Qty"
+						heading3="Price"
+						orders={orders}
+					/>
 					<button className="add-button" onClick={showProductsTable}>
 						Edit Items
 					</button>
@@ -72,11 +92,15 @@ export default function Table(props) {
 					<div className="total">
 						<p>{getTotal()}</p>
 					</div>
-					<button className="pay-button">Pay</button>
+					<button className={!isAllServed() ? 'pay-button-disabled' : 'pay-button'}
+                            disabled={!isAllServed()}
+                            onClick={payOrders}>
+						Pay
+					</button>
 				</Animated>
 				{showProducts === false ? null : (
 					<Animated className="order-page" animationIn="fadeIn" animationOut="fadeOut" isVisible={true}>
-                        <Products closeWindow={closeWindow} orders={orders} table={props.name}/>
+						<Products closeWindow={closeWindow} orders={orders} table={props.name} />
 					</Animated>
 				)}
 			</div>

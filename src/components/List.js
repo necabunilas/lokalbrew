@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import socketIOClient from 'socket.io-client';
+const ENDPOINT = 'http://localhost:5000';
 
 export default function List(props) {
+
+	const [orders, setOrders] = useState([]);
+
+	useEffect(() => {
+		setOrders(props.orders);
+	},[props.orders]);
 
 	function formatText(text){
 		if (text === 'table-1') {
@@ -22,13 +30,40 @@ export default function List(props) {
 		}
 	}
 
-	function changeState(table, order){
-		console.log(table + " " + order);
+	function useForceUpdate() {
+		const [, setTick] = useState(0);
+		const update = useCallback(() => {
+			setTick((tick) => tick + 1);
+		}, []);
+		return update;
 	}
+
+	const forceUpdate = useForceUpdate();
+
+	function changeState(table, order, status){
+		const socket = socketIOClient.connect(ENDPOINT);
+		socket.emit('serve', { table: table, order: order, status: status});
+		const elementsIndex = orders.findIndex((orderItem) => orderItem.order === order);
+		let newArray = orders;
+		if (props.class === 'Queue') {		
+			newArray.splice(elementsIndex, 1);
+		}else if(props.class === 'Table'){
+			let newStatus = '';
+			if (status === 'new') {
+				newStatus = 'served';
+			} else if (status === 'served') {
+				newStatus = 'new';
+			}
+			newArray[elementsIndex] = { ...newArray[elementsIndex], status: newStatus };
+			props.isAllServed();
+		}
+		setOrders(newArray);
+		forceUpdate();
+	}	
 
 	function showList(orders, index) {
 		return (
-			<div onClick={orders.status !== "paid" ? () => changeState(orders.table, orders.order): null} value="test" style={orders.status === "served" ? { background: 'rgba(151, 188, 150, 0.8)' } : null } key={index} className="Row">
+			<div onClick={orders.status !== "paid" ? () => changeState(orders.table, orders.order, orders.status): null} style={orders.status === "served" ? { background: 'rgba(151, 188, 150, 0.8)' } : null } key={index} className="Row">
 				<div className="Cell1 cell">
 					<p>{orders.order}</p>
 				</div>
@@ -61,7 +96,7 @@ export default function List(props) {
 					<p>{props.heading3}</p>
 				</div>
 			</div>
-			<div className={props.class}>{props.orders.map(showList)}</div>
+			<div className={props.class}>{orders.map(showList)}</div>
 		</div>
 	);
 }

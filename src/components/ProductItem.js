@@ -8,11 +8,10 @@ export default function ProductItem(props) {
 	const [units, setUnits] = useState(elementsIndex !== -1 ? props.orders[elementsIndex].qty : 0);
 
 	function isZero() {
-		if (units === 0) {
+		if (units < 1) {
 			return true;
-		} else {
-			return false;
 		}
+			return false;
 	}
 
 	function sendData(action, item){
@@ -69,7 +68,7 @@ export default function ProductItem(props) {
 			<img className="product-photo" src={process.env.PUBLIC_URL + props.item.url} alt="item" />
 			<p className="product-name">{props.item.name}</p>
 			<p className="product-price">{props.item.price}</p>
-			<button onClick={deduct} className={isZero() ? 'deduct-disabled' : 'deduct'}>
+			<button onClick={deduct} disabled={isZero()} className={isZero() ? 'deduct-disabled' : 'deduct'}>
 				-
 			</button>
 			<p className="units">{units}</p>
