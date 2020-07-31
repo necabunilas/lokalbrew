@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Animated } from 'react-animated-css';
 import { StartCase } from 'react-lodash';
 import List from './List';
@@ -10,16 +10,7 @@ export default function TableEntries(props){
 
     const [showProducts, setShowProds] = useState(false);
     const [orders, setOrders] = useState([]);
-
-    function isAllServed() {
-		let served = true;
-		orders.forEach((item) => {
-			if (item.status === 'new') {
-				served = false;
-			}
-		});
-		return served;
-    }
+    const [served, setServed] = useState(false);
 
     useEffect(() => {
 		const socket = socketIOClient(ENDPOINT);
@@ -28,10 +19,19 @@ export default function TableEntries(props){
 			setOrders(data);
 		});
 
+        let served = true;
+		orders.forEach((item) => {
+			if (item.status === 'new') {
+				served = false;
+			}
+        });
+        
+        setServed(served);
+
 		// CLEAN UP THE EFFECT
 		return () => socket.disconnect();
 		//
-	}, [props.name]);    
+	}, [props.name, orders]);    
 
     function showProductsTable(event) {
 		event.preventDefault();
@@ -47,17 +47,23 @@ export default function TableEntries(props){
 	}
 
     function payOrders(event) {
-		event.preventDefault();
+        event.preventDefault();
+        const socket = socketIOClient.connect(ENDPOINT);
+		socket.emit('pay', props.name);
 	}
 
     function closeWindow() {
-		setShowProds(false);
+        setShowProds(false);
 	}    
 
     function exitPage(event) {
 		event.preventDefault();
 		props.exitPage();
 	}
+
+    function allServed(bool){
+        setServed(bool);
+    }
 
     return (
 		<div>
@@ -68,7 +74,14 @@ export default function TableEntries(props){
 				<button className="close-button" onClick={exitPage}>
 					x
 				</button>
-				<List class="Table" heading1="Orders" heading2="Qty" heading3="Price" orders={orders} />
+				<List
+					class="Table"
+					heading1="Orders"
+					heading2="Qty"
+					heading3="Price"
+					orders={orders}
+					allServed={allServed}
+				/>
 				<button className="add-button" onClick={showProductsTable}>
 					Edit Items
 				</button>
@@ -77,8 +90,8 @@ export default function TableEntries(props){
 					<p>{getTotal()}</p>
 				</div>
 				<button
-					className={!isAllServed() ? 'pay-button-disabled' : 'pay-button'}
-					disabled={!isAllServed()}
+					className={!served ? 'pay-button-disabled' : 'pay-button'}
+					disabled={!served}
 					onClick={payOrders}
 				>
 					Pay

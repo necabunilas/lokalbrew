@@ -4,12 +4,13 @@ const ENDPOINT = 'http://localhost:5000';
 
 export default function List(props) {
 
+	/*
 	const [orders, setOrders] = useState([]);
 
 	useEffect(() => {
 		setOrders(props.orders);
 	},[props.orders]);
-
+	*/
 	function formatText(text){
 		if (text === 'table-1') {
 			return 'Table 1';
@@ -40,11 +41,22 @@ export default function List(props) {
 
 	const forceUpdate = useForceUpdate();
 
+	function isAllServed() {
+		let served = true;
+		props.orders.forEach((item) => {
+			if (item.status === 'new') {
+				served = false;
+			}
+		});
+		
+		props.allServed(served);
+	}
+
 	function changeState(table, order, status){
 		const socket = socketIOClient.connect(ENDPOINT);
 		socket.emit('serve', { table: table, order: order, status: status});
-		const elementsIndex = orders.findIndex((orderItem) => orderItem.order === order);
-		let newArray = orders;
+		const elementsIndex = props.orders.findIndex((orderItem) => orderItem.order === order);
+		let newArray = props.orders;
 		if (props.class === 'Queue') {		
 			newArray.splice(elementsIndex, 1);
 		}else if(props.class === 'Table'){
@@ -55,8 +67,8 @@ export default function List(props) {
 				newStatus = 'new';
 			}
 			newArray[elementsIndex] = { ...newArray[elementsIndex], status: newStatus };
+			isAllServed();
 		}
-		setOrders(newArray);
 		forceUpdate();
 	}	
 
@@ -95,7 +107,7 @@ export default function List(props) {
 					<p>{props.heading3}</p>
 				</div>
 			</div>
-			<div className={props.class}>{orders.map(showList)}</div>
+			<div className={props.class}>{props.orders.map(showList)}</div>
 		</div>
 	);
 }
