@@ -55,7 +55,6 @@ export default function List(props) {
 				newStatus = 'new';
 			}
 			newArray[elementsIndex] = { ...newArray[elementsIndex], status: newStatus };
-			props.isAllServed();
 		}
 		setOrders(newArray);
 		forceUpdate();
