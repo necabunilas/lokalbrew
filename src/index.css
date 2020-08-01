@@ -461,6 +461,21 @@ hr {
     overflow-x: hidden;
 }
 
+.Deals
+{
+    position: absolute;
+    left: 34px;
+    top: 200px;
+    width: 737px;
+    height: 345px;
+    border: 1px solid #2da822;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: rgba(151, 188, 150, 0.17);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
 .Heading
 {
     position: absolute;
@@ -517,7 +532,7 @@ hr {
 {
   display: table-cell;
   height: 53px;
-  width: 483px;
+  width: 482px;
 
   border: 1px solid #1E9F1B;
   box-sizing: border-box;
@@ -528,7 +543,7 @@ hr {
 }
 .Cell2 {
   display: table-cell;
-  width: 90px;
+  width: 89px;
   height: 53px;
   border-right: 1px solid #2da822;
   border-bottom: 1px solid #2da822;

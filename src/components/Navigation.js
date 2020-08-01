@@ -33,7 +33,7 @@ class Navigation extends Component {
 						<NavLink to="/deals" className="nav-link" activeClassName="active-link">
 							<div className="nav-item">
 								<FontAwesomeIcon className="icon" icon={faWallet} size="2x" />
-								<p> Deals</p>
+								<p> History</p>
 							</div>
 						</NavLink>
 						<button className="logout" onClick={()=>this.props.getState(false)}>Logout</button>

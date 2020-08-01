@@ -4,13 +4,6 @@ const ENDPOINT = 'http://localhost:5000';
 
 export default function List(props) {
 
-	/*
-	const [orders, setOrders] = useState([]);
-
-	useEffect(() => {
-		setOrders(props.orders);
-	},[props.orders]);
-	*/
 	function formatText(text){
 		if (text === 'table-1') {
 			return 'Table 1';
@@ -74,7 +67,12 @@ export default function List(props) {
 
 	function showList(orders, index) {
 		return (
-			<div onClick={orders.status !== "paid" ? () => changeState(orders.table, orders.order, orders.status): null} style={orders.status === "served" ? { background: 'rgba(151, 188, 150, 0.8)' } : null } key={index} className="Row">
+			<div
+				onClick={orders.status !== 'paid' ? () => changeState(orders.table, orders.order, orders.status) : null}
+				style={orders.status === 'served' ? { background: 'rgba(151, 188, 150, 0.8)' } : null}
+				key={index}
+				className="Row"
+			>
 				<div className="Cell1 cell">
 					<p>{orders.order}</p>
 				</div>
@@ -87,7 +85,7 @@ export default function List(props) {
 							? formatText(orders.table)
 							: props.class === 'Table'
 							? orders.price * orders.qty
-							: orders.date}
+							: new Date(orders.date).toLocaleDateString()}
 					</p>
 				</div>
 			</div>
