@@ -30,7 +30,7 @@ export default function Products(props) {
 					</div>
 					<div className="top-border" />
 					<div className="products">
-						<Route path="/coffee">
+						<Route path="/coffee">	
 							<Coffee orders={props.orders} table={props.table} />
 						</Route>
 						<Route path="/food">

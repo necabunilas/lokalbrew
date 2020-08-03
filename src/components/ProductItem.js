@@ -45,19 +45,15 @@ export default function ProductItem(props) {
 
 	function updateOrders(item) {
 		const { order, qty } = item;
-		const elementsIndex = props.orders.findIndex((orderItem) => orderItem.order === order);
 		let newArray = props.orders;
 		let action = '';
 		if (newArray.some((item) => item.order === order)) {
 			if (qty > 0) {
-				newArray[elementsIndex] = { ...newArray[elementsIndex], qty: qty };
 				action = 'update';
 			} else {
-				newArray.splice(elementsIndex,1);
 				action = 'delete';
 			}
 		} else {
-			newArray.push(item);
 			action = 'new';
 		}
 		sendData(action, item);

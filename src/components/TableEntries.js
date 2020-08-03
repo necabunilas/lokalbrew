@@ -13,6 +13,7 @@ export default function TableEntries(props){
     const [served, setServed] = useState(false);
 
     useEffect(() => {
+
 		const socket = socketIOClient(ENDPOINT);
 		socket.emit('get Orders', props.name);
 		socket.on('get Orders', (data) => {
