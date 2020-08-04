@@ -199,6 +199,12 @@ code {
   line-height: 18px;
 }
 
+.nav-link div {
+  background: #FFFFFF;
+  border-top: 2px solid#ffffff;
+  border-bottom: 2px solid#ffffff;
+}
+
 /*Put shadow when link is focused*/
 .active-link div {
   background: #FFFFFF;
@@ -226,7 +232,7 @@ code {
 
 .logout {
   position: relative;
-  top: 406px;
+  top: 398px;
   width: 240px;
   height: 40px;
   background-color: white;
