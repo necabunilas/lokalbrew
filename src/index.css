@@ -837,7 +837,7 @@ hr {
   position: relative;
   width: 24px;
   height: 24px;
-  left: 320px;
+  left: 265px;
   top: 38px;
 
   background: rgba(30, 159, 27, 0.6);
@@ -864,7 +864,7 @@ hr {
   width: 67px;
   height: 24px;
   top: 40px;
-  left: 290px;
+  left: 262px;
 
   font-family: Quicksand;
   font-style: normal;
@@ -873,7 +873,7 @@ hr {
   line-height: 22px;
 
   color: #000000;
-  display: inline;
+  display: inline-block;
 }
 
 .add:hover, .deduct:hover{

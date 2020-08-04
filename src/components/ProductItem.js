@@ -67,7 +67,7 @@ export default function ProductItem(props) {
 			<button onClick={deduct} disabled={isZero()} className={isZero() ? 'deduct-disabled' : 'deduct'}>
 				-
 			</button>
-			<p className="units">{units}</p>
+			<span className="units">{units}</span>
 			<button onClick={add} className="add">
 				+
 			</button>
