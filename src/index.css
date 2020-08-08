@@ -165,7 +165,7 @@ code {
   left: 240px;
   top: 0px;
   text-align: center;
-  background-image: url(/bg-image.jpg);
+  background-image: url('/lokalbrew/bg-image.jpg');
 }
 
 .orders-page p{
