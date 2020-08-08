@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/lokalbrew/static/css/main.a81240c6.chunk.css",
+    "main.js": "/lokalbrew/static/js/main.b387d246.chunk.js",
+    "main.js.map": "/lokalbrew/static/js/main.b387d246.chunk.js.map",
+    "runtime-main.js": "/lokalbrew/static/js/runtime-main.0c5f14e0.js",
+    "runtime-main.js.map": "/lokalbrew/static/js/runtime-main.0c5f14e0.js.map",
+    "static/css/2.93b3b32d.chunk.css": "/lokalbrew/static/css/2.93b3b32d.chunk.css",
+    "static/js/2.7cb8403e.chunk.js": "/lokalbrew/static/js/2.7cb8403e.chunk.js",
+    "static/js/2.7cb8403e.chunk.js.map": "/lokalbrew/static/js/2.7cb8403e.chunk.js.map",
+    "index.html": "/lokalbrew/index.html",
+    "precache-manifest.0b42d5b9228d6779b54fa68131c35cd3.js": "/lokalbrew/precache-manifest.0b42d5b9228d6779b54fa68131c35cd3.js",
+    "service-worker.js": "/lokalbrew/service-worker.js",
+    "static/css/2.93b3b32d.chunk.css.map": "/lokalbrew/static/css/2.93b3b32d.chunk.css.map",
+    "static/css/main.a81240c6.chunk.css.map": "/lokalbrew/static/css/main.a81240c6.chunk.css.map",
+    "static/js/2.7cb8403e.chunk.js.LICENSE.txt": "/lokalbrew/static/js/2.7cb8403e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0c5f14e0.js",
+    "static/css/2.93b3b32d.chunk.css",
+    "static/js/2.7cb8403e.chunk.js",
+    "static/css/main.a81240c6.chunk.css",
+    "static/js/main.b387d246.chunk.js"
+  ]
+}
