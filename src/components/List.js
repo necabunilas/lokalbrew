@@ -41,7 +41,6 @@ export default function List(props) {
 				served = false;
 			}
 		});
-		
 		props.allServed(served);
 	}
 
@@ -53,13 +52,6 @@ export default function List(props) {
 		if (props.class === 'Queue') {		
 			newArray.splice(elementsIndex, 1);
 		}else if(props.class === 'Table'){
-			let newStatus = '';
-			if (status === 'new') {
-				newStatus = 'served';
-			} else if (status === 'served') {
-				newStatus = 'new';
-			}
-			newArray[elementsIndex] = { ...newArray[elementsIndex], status: newStatus };
 			isAllServed();
 		}
 		forceUpdate();

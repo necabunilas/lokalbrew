@@ -91,8 +91,8 @@ export default function TableEntries(props){
 					<p>{getTotal()}</p>
 				</div>
 				<button
-					className={!served ? 'pay-button-disabled' : 'pay-button'}
-					disabled={!served}
+					className={!served || !orders.length ? 'pay-button-disabled' : 'pay-button'}
+					disabled={!served || !orders.length}
 					onClick={payOrders}
 				>
 					Pay
