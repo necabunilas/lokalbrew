@@ -9,7 +9,7 @@ export default function Products(props) {
         event.preventDefault();
         props.closeWindow();
     }
-    
+	
 	return (
 		<div>
 			<div>
@@ -21,7 +21,11 @@ export default function Products(props) {
 			<Router>
 				<div>
 					<div>
-						<NavLink className="selection-coffee select" activeClassName="active-selection" to="/coffee">
+						<NavLink
+							className="selection-coffee select"
+							activeClassName="active-selection"
+							to="/coffee"
+						>
 							<p>Coffee</p>
 						</NavLink>
 						<NavLink className="selection-food select" activeClassName="active-selection" to="/food">
@@ -30,7 +34,7 @@ export default function Products(props) {
 					</div>
 					<div className="top-border" />
 					<div className="products">
-						<Route path="/coffee">	
+						<Route path="/coffee">
 							<Coffee orders={props.orders} table={props.table} />
 						</Route>
 						<Route path="/food">

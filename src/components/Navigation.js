@@ -36,7 +36,9 @@ class Navigation extends Component {
 								<p> History</p>
 							</div>
 						</NavLink>
-						<button className="logout" onClick={()=>this.props.getState(false)}>Logout</button>
+						<button className="logout" onClick={() => this.props.getState(false)}>
+							Logout
+						</button>
 					</div>
 					<div className="pages">
 						<Route exact path="/" component={Orders} />

@@ -165,7 +165,7 @@ code {
   left: 240px;
   top: 0px;
   text-align: center;
-  background-image: url('/bg-image.jpg');
+  background-image: url(/bg-image.jpg);
 }
 
 .orders-page p{
@@ -560,7 +560,7 @@ hr {
 
 .Cell3 {
   display: table-cell;
-  width: 164px;
+  width: 166px;
   height: 53px;
   border-bottom: 1px solid #1E9F1B;
   box-sizing: border-box;
@@ -635,25 +635,6 @@ hr {
   height: 48px;
   right: 48px;
   bottom: 40px;
-
-  background: #1E9F1B;
-  border-radius: 10px;
-  border: 1px solid white;
-  color: white;
-  cursor: pointer;
-  font-family: Quicksand;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 30px;
-}
-
-.export-button {
-  position: absolute;
-  width: 224px;
-  height: 48px;
-  right: 26px;
-  bottom: 30px;
 
   background: #1E9F1B;
   border-radius: 10px;
@@ -896,4 +877,55 @@ hr {
   top: 38px;
   border: 1px solid #2da822;
   cursor: pointer;
+}
+
+.inner-page .start {
+  position: absolute;
+  bottom: 30px;
+  left: 235px;
+  background: rgba(151, 188, 150, 0.17);
+  box-sizing: border-box;
+  width: 150px;
+  height: 48px;
+  
+}
+
+.inner-page .end {
+  position: absolute;
+  bottom: 30px;
+  left: 430px;
+  background: rgba(151, 188, 150, 0.17);
+  box-sizing: border-box;
+  width: 150px;
+  height: 48px;
+  
+}
+
+.start::placeholder {
+  text-align: center;
+}
+
+.export-button {
+  position: absolute;
+  width: 150px;
+  height: 48px;
+  right: 26px;
+  bottom: 30px;
+
+  background: #1E9F1B;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.export-button:hover {
+  background-color: white;
+  color: #2da822;
+  border: 1px solid #2da822;
 }

@@ -7,7 +7,7 @@ import Navigation from './components/Navigation';
 
 function App() {
 
-  const [loggedState, setLoggedState] = useState(false); //to be changed
+  const [loggedState, setLoggedState] = useState(true); //to be changed
 
   function setState(state){
     setLoggedState(state);
