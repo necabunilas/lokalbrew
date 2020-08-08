@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5920a152754c36bd029120e4803ed87f",
+    "revision": "061373bd1b8eda8128d55527b54ebc58",
     "url": "/lokalbrew/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lokalbrew/static/css/2.93b3b32d.chunk.css"
   },
   {
-    "revision": "733971dd5e47a99271e1",
-    "url": "/lokalbrew/static/css/main.0ac38c7b.chunk.css"
+    "revision": "23586512de35fa124821",
+    "url": "/lokalbrew/static/css/main.4b7b0c0c.chunk.css"
   },
   {
     "revision": "41f41c0abbfe62c2eb7e",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lokalbrew/static/js/2.7cb8403e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "733971dd5e47a99271e1",
+    "revision": "23586512de35fa124821",
     "url": "/lokalbrew/static/js/main.b387d246.chunk.js"
   },
   {
