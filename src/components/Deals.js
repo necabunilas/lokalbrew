@@ -3,7 +3,7 @@ import socketIOClient from 'socket.io-client';
 import List from './List';
 import DatePicker from 'react-date-picker';
 import { CSVLink } from 'react-csv';
-const ENDPOINT = 'http://192.168.254.107:5000';
+const ENDPOINT = 'https://192.168.254.107:5000';
 
 
 export default function Deals() {
