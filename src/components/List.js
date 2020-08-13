@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import socketIOClient from 'socket.io-client';
-const ENDPOINT = 'http://localhost:5000';
+const ENDPOINT = 'http://192.168.254.107:5000';
 
 export default function List(props) {
 
