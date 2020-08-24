@@ -4,7 +4,8 @@ import { StartCase } from 'react-lodash';
 import List from './List';
 import Products from './Products';
 import socketIOClient from 'socket.io-client';
-const ENDPOINT = 'https://192.168.254.107:5000';
+import endpoint from './Network';
+const ENDPOINT = endpoint;
 
 export default function TableEntries(props){
 

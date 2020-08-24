@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import socketIOClient from 'socket.io-client';
-const ENDPOINT = 'https://192.168.254.107:5000';
+import endpoint from './Network';
+const ENDPOINT = endpoint;
 
 export default function List(props) {
 
